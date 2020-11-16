@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './containers/App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import HexGrid from './components/HexGrid';
+import FishTank from './components/FishTank';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Switch>
+        <Route exact path="/" component={App}/>
+        <Route path="/hexes" component={HexGrid} />
+        <Route path="/fishtank" component={FishTank} />
+    </Switch>
+    <GoogleAnalytics/>
+  </Router>,
   document.getElementById('root')
 );
 
