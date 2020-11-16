@@ -93,10 +93,6 @@ function isScrolledIntoView(id) {
   var rect = el.getBoundingClientRect();
   var elemTop = rect.top;
   var elemBottom = rect.bottom;
-  // Only completely visible elements return true:
-  // var isVisible = (elemBottom >= 0 && elemTop <= (.5*window.innerHeight));
-  // Partially visible elements return true
-  console.log(elemTop, window.innerHeight, elemBottom)
   let isVisible = elemTop < window.innerHeight && elemBottom >= .2*window.innerHeight;
   return isVisible;
 }
@@ -107,38 +103,46 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      let page = [ 'story', 'skills', 'work', 'play','top'].filter(isScrolledIntoView)[0];
-      if(page && this.state.page !== page) this.setState({ page : page })
-      let { y } = getScrollPosition({});
-      let scrollUp = document.getElementById('scrollToTop')
-      let nav = document.getElementById('navigation')
-      let links = document.getElementById('links')
-      let title = document.getElementById('title')
-      if (y < -0.6*window.innerHeight) {
-        links.style.background = 'rgba(28, 134, 209, .7)';
-        nav.style.color = 'white';
-        // nav.style.transform = 'translateY(-60px)';
-        title.style.maxWidth = '0px';
-        title.style.maxHeight = '0px'
-        // title.style.transform= 'scaleX(0)'
-        title.style.margin = '0px';
-        scrollUp.style.display='flex';
-      }
-      else {
-        links.style.background = 'transparent';
-        nav.style.color = 'black';
-        // nav.style.transform = 'translateY(0)';
-        // title.style.display = 'none'
-        // title.style.transform= 'scaleX(1)'
-        title.style.maxHeight = '60px'
-        title.style.maxWidth = '350px'
-        // setTimeout(()=>, 600);
-        title.style.margin = '30px';
-        scrollUp.style.display='none';
-      }
-      // if ((-1 * y) - 200 > document.body.offsetHeight) console.log('bottom')
+    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleResize = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
     })
+  }
+
+  handleScroll = () => {
+    let page = [ 'story', 'skills', 'work', 'play','top'].filter(isScrolledIntoView)[0];
+    if(page && this.state.page !== page) this.setState({ page : page })
+    let { y } = getScrollPosition({});
+    let scrollUp = document.getElementById('scrollToTop')
+    let nav = document.getElementById('navigation')
+    let links = document.getElementById('links')
+    let title = document.getElementById('title')
+    if (y < -0.6*window.innerHeight) {
+      links.style.background = 'rgba(28, 134, 209, .7)';
+      nav.style.color = 'white';
+      title.style.maxWidth = '0px';
+      title.style.maxHeight = '0px'
+      title.style.margin = '0px';
+      scrollUp.style.display='flex';
+    }
+    else {
+      links.style.background = 'transparent';
+      nav.style.color = 'black';
+      title.style.maxHeight = '60px'
+      title.style.maxWidth = '350px'
+      title.style.margin = '30px';
+      scrollUp.style.display='none';
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.handleResize)
   }
 
   scrollTo(id) {

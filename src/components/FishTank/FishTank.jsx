@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './FishTank.scss';
 
 class FishTank extends Component {
-    componentDidMount(){
-        console.log('fish')
-    }
     render() {
         return (
             <div className="tank">

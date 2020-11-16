@@ -119,6 +119,17 @@ const styles = theme => ({
     background: 'rgba(28, 134, 209, 1)',
   },
   text: {
+    '&::-webkit-scrollbar': {
+      width: 25,
+      padding: 2,
+      margin: 10
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: 'white',
+      border: '8px solid transparent',
+      backgroundClip: 'padding-box',
+      borderRadius: 15,
+    },
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -174,11 +185,11 @@ class Work extends React.Component {
         <div className={classes.inner}>
           <div className={classes.directory}>
             <div className={classes.directoryHeader}>Professional</div>
-            {professional.map(job => <div className={`${classes.directoryItem} ${this.state.job.company === job.company ? classes.selectedItem : ''}`} onClick={()=>this.setJob(job)}>
+            {professional.map(job => <div key={`${job.company}_link`} className={`${classes.directoryItem} ${this.state.job.company === job.company ? classes.selectedItem : ''}`} onClick={()=>this.setJob(job)}>
               {job.company}
             </div>)}
             <div className={classes.directoryHeader}>Volunteer</div>
-            {volunteer.map(job => <div className={`${classes.directoryItem} ${this.state.job.company === job.company ? classes.selectedItem : ''}`} onClick={()=>this.setJob(job)}>
+            {volunteer.map(job => <div key={`${job.company}_link`} className={`${classes.directoryItem} ${this.state.job.company === job.company ? classes.selectedItem : ''}`} onClick={()=>this.setJob(job)}>
               {job.company}
             </div>)}
           </div>

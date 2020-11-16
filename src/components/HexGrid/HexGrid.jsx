@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './Hex.scss';
 
 class HexGrid extends Component {
-    componentDidMount(){
-        console.log('hex')
-    }
     hexGrid(h, w) {
         let black_hexes = [[0, 6], [0, 10], [0, 11], [1, 6], [2, 11], [2, 12], [2, 13], [2, 14], [3, 8], [3, 9], [3, 12], (2) [4, 11], [5, 6], [5, 8], [5, 10], [5, 11], [5, 12], [5, 13], [6, 8], [6, 14], [7, 10], [8, 14], [9, 8], [9, 10], [9, 14]];
         let grid = []

@@ -108,7 +108,8 @@ const styles = theme => ({
     }
   },
   modalText: { 
-    flexShrink:1,
+    flexShrink: 1,
+    minHeight: '45%',
     maxHeight: '100%',
     overflow: 'auto',
     [theme.breakpoints.up('md')] : {
@@ -116,6 +117,8 @@ const styles = theme => ({
     },
     [theme.breakpoints.down('sm')] : {
       marginTop: 16,
+      flexShrink: 0,
+      maxHeight: 'unset',
     },
     minWidth: '40%',
   },
@@ -171,14 +174,16 @@ const styles = theme => ({
       opacity:'1',
       filter: 'invert(45%)',
     },
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-      alignItems: 'center'
-    },
     display: 'flex',
     justifyContent: 'center',
     maxHeight: '100%',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      overflowY: 'scroll',
+      justifyContent: 'unset',
+    }
   },
   closeButton: {
     position: 'absolute',
@@ -226,9 +231,9 @@ class Gallery extends React.Component {
         {item && <DialogTitle className={classes.dialogTitle} disableTypography>
           {item.title}
           <div className={classes.links}>
-              {item.link && <div><Link/> <a rel="noreferrer" target="_blank" href={item.link} rel="noreferrer" target="_blank">Live page</a></div>}
-              {item.github && <div><GitHub/> <a rel="noreferrer" target="_blank" href={item.github} rel="noreferrer" target="_blank">Github</a></div>}
-              {item.report && <div><Description/> <a rel="noreferrer" target="_blank" href={item.report} rel="noreferrer" target="_blank">Report</a></div>}
+              {item.link && <div><Link/> <a href={item.link} rel="noreferrer" target="_blank">Live page</a></div>}
+              {item.github && <div><GitHub/> <a href={item.github} rel="noreferrer" target="_blank">Github</a></div>}
+              {item.report && <div><Description/> <a href={item.report} rel="noreferrer" target="_blank">Report</a></div>}
           </div>
           <IconButton aria-label="close" size="small" className={classes.closeButton} onClick={()=>this.toggleModal(null)}>
             <Close />
@@ -252,13 +257,12 @@ class Gallery extends React.Component {
   }
 
   render() {
-    const { classes, title, data } = this.props;
+    const { classes, data } = this.props;
     
     return (
       <section className={classes.gallery}>
         {this.renderModal()}
         <div className={classes.container}>
-          
           <div className={classes.galleryGrid}>
             {data.map((item, index)=>
               <div className={classes.galleryItem} key={index} onClick={() => this.toggleModal(item)}>
