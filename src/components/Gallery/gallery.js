@@ -6,7 +6,6 @@ import React from "react";
 const styles = theme => ({
   gallery: {
     maxWidth: 1000,
-    paddingBottom: 10,
     textAlign: 'center'
   },
   container: {
@@ -258,6 +257,16 @@ class Gallery extends React.Component {
 
   render() {
     const { classes, data } = this.props;
+    const tags = data.reduce((prev, prop) => {
+      // console.log(prev, prop)
+      return [...prev, ...(prop.tags || []).filter(tag => {
+        // console.log(prev, tag, prev.includes(tag))
+        return !prev.includes(tag)
+      })]
+    }, []);
+
+    
+    // console.log(tags)
     
     return (
       <section className={classes.gallery}>

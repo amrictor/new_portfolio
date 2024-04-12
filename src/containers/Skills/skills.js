@@ -1,7 +1,7 @@
 import React from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
-import { FaPython as Python, FaJava as Java, FaJsSquare as JS, FaHtml5 as HTML, FaReact, FaSass as Sass } from 'react-icons/fa'
+import { FaPython as Python, FaJava as Java, FaJsSquare as JS, FaHtml5 as HTML, FaReact, FaSass as Sass, FaNodeJs, FaRaspberryPi, FaPhp } from 'react-icons/fa'
 import { FaGitSquare as Git, FaMicrosoft as Windows, FaLinux as Linux, FaCss3Alt as CSS} from 'react-icons/fa'
 import { GoTerminal as Bash } from 'react-icons/go';
 import { 
@@ -18,6 +18,7 @@ import {
 } from 'react-icons/si';
 
 import { Cpp,Unity, Csharp } from '../../resources/code_icons'
+import { AiOutlineConsoleSql } from 'react-icons/ai';
 
 const useStyles = makeStyles({
   page: {
@@ -45,7 +46,7 @@ const useStyles = makeStyles({
     maxWidth: 1000,
     fontSize: 35,
     color: 'white',
-    margin: '10px auto',
+    margin: '10px auto 0px',
     display: 'flex',
     flexWrap: 'wrap',
   },
@@ -91,42 +92,37 @@ function Skills() {
         Expert
       </div>
       <div className={classes.badges}>
-        {softwareBadge("Javascript", <JS id="Javascript"/>, "top")}
         {softwareBadge("React", <FaReact id="React"/>, "top")}
+        {softwareBadge("Javascript", <JS id="Javascript"/>, "top")}
+        {softwareBadge("Jest", <Jest id="Jest"/>, "top")}
         {softwareBadge("HTML", <HTML id="HTML5"/>, "top")}
         {softwareBadge("CSS", <CSS id="CSS"/>, "top")}
         {softwareBadge("Sass", <Sass id="Sass"/>, "top")}
-        {softwareBadge("Java", <Java id="Java"/>, "top")}
+      </div>
+      <div className={classes.badges}>
+        {softwareBadge("TypeScript", <TypeScript id="TypeScript"/>, "top")}
+        {softwareBadge("Redux", <Redux id="Redux"/>, "top")}
+        {softwareBadge("Node.js", <FaNodeJs id="Node"/>, "top")}
+        {softwareBadge("Python", <Python id="Python"/>, "top")}
       </div>
 
       <div className={classes.title}>
         Proficient
       </div>
       <div className={classes.badges}>
-        {softwareBadge("Redux", <Redux id="Redux"/>, "top")}
-        {softwareBadge("Jest", <Jest id="Jest"/>, "top")}
-        {softwareBadge("C++", <Cpp id="Cpp"/>, "top")}
-        {softwareBadge("Python", <Python id="Python"/>, "top")}
         {softwareBadge("C#", <Csharp id="Csharp"/>, "top")}
-        {softwareBadge("Bash", <Bash id="ShellScript"/>, "top")}
-      </div>
-      <div className={classes.badges}>
-        {softwareBadge("MySQL", <MySQL id="MySQL"/>, "top")}
-        {softwareBadge("MongoDB", <Mongodb id="Mongodb"/>, "top")}
-        {softwareBadge("PostgresQL", <PostgresQL id="PostgresQL"/>, "top")}
-        {softwareBadge("Postman", <Postman id="Postman"/>, "top")}
-        {softwareBadge("Git", <Git id="Git"/>, "top")}
-      </div>
-
-      <div className={classes.title}>
-        Novice
-      </div>
-      <div className={classes.badges}>
-        {softwareBadge("TypeScript", <TypeScript id="TypeScript"/>, "top")}
-        {softwareBadge("GraphQL", <GraphQL id="GraphQL"/>, "top")}
-        {softwareBadge("Unity", <Unity id="Unity"/>, "top")}
+        {softwareBadge("Java", <Java id="Java"/>, "top")}
+        {softwareBadge("C++", <Cpp id="Cpp"/>, "top")}
+        {softwareBadge("PHP", <FaPhp id="Cpp"/>, "top")}
         {softwareBadge("Twilio", <Twilio id="Twilio"/>, "top")}
         {softwareBadge("Tensorflow", <SiTensorflow id="Tensorflow"/>, "top")}
+      </div>
+      <div className={classes.badges}>
+        {softwareBadge("Raspberry Pi", <FaRaspberryPi id="Raspberry Pi"/>, "top")}
+        {softwareBadge("Bash", <Bash id="ShellScript"/>, "top")}
+        {softwareBadge("SQL", <AiOutlineConsoleSql id="SQL"/>, "top")}
+        {softwareBadge("MongoDB", <Mongodb id="Mongodb"/>, "top")}
+        {softwareBadge("GraphQL", <GraphQL id="GraphQL"/>, "top")}
       </div>
     </div>
   )

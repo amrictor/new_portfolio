@@ -1,9 +1,10 @@
-import isales from '../../resources/images/iSalesCRM_logo_white.png';
-import hpe from '../../resources/images/HPE.png';
-import pelco from '../../resources/images/pelco.png';
+import isales from '../../resources/images/logos/ringy-logo.svg';
+import hpe from '../../resources/images/logos/HPE.svg';
+import pelco from '../../resources/images/logos/pelco_blue.png';
+import usbank from '../../resources/images/logos/usbank.png';
 
-import mbk from '../../resources/images/mbklogowhite.svg';
-import extralife from '../../resources/images/extra-life.png';
+import mbk from '../../resources/images/logos/mbklogo.svg';
+import extralife from '../../resources/images/logos/extralife.png';
 import lumberjack from '../../resources/images/redactedlumberjack.png';
 
 import pelco1 from '../../resources/images/pelco1.png';
@@ -11,6 +12,9 @@ import pelco1 from '../../resources/images/pelco1.png';
 import mbk1 from '../../resources/images/mbk1.png';
 import mbk2 from '../../resources/images/mbk2.png';
 import mbk3 from '../../resources/images/mbk3.png';
+
+import acmw from '../../resources/images/logos/acmw.png';
+import csu from '../../resources/images/logos/CSU.png';
 
 import acmw1 from '../../resources/images/acmw1.jpg';
 import acmw2 from '../../resources/images/acmw2.jpg';
@@ -22,26 +26,69 @@ import extralife1 from '../../resources/images/extralife1.jpg';
 
 export const professional = [
   {
-    company: "iSalesCRM",
-    position: "Front End Software Engineer",
+    company: "U.S. Bank",
+    position: "Full Stack Software Engineer",
+    location: "Remote",
+    dates: "July, 2023 - Today",
+    logo: usbank,
+    images: [],
+    technologies: ["Typescript", "ReactJS", "Redux-Saga", "Java", "SQL"],
+    description: 
+    <ul>
+      <li>Collaborates with numerous engineering teams from different products and parts of the world in order to integrate Bento software with the existing financial systems at U.S. Bank with a high attention to security and compliance requirements</li>
+      <li>Works and communicates effectively on a fully remote team of engineers at varying experience levels and provides mentorship and onboarding support to junior developers and new hires</li>
+      <li>Implements new interfaces from prototypes and works closely with product and design teams to identify undefined requirements and give feedback on engineering needs</li>
+      <li>Writes thorough documentation that is actively referenced by people throughout the company</li>
+    </ul>,
+    
+    // <div>
+    //   I am currently a Front End Software Engineer at iSalesCRM on a small but effective engineering team. The company 
+    //   is at a critical point of growth as it takes its success and revenue and pours it back into the engineering 
+    //   department and the progress of the company on the whole. Joining the company at this stage has given me a unique 
+    //   perspective on transitioning from a small to a medium sized company, and more importantly, on how that change 
+    //   affects the software. My position gives me the opportunity to influence the direction of our system’s architecture 
+    //   and design, while also learning from the decisions of the more experienced developers around me.
+    //   <br/><br/>
+    //   I get to work on large features solo or collaboratively with senior developers at the company and I am constantly 
+    //   learning how to tackle new problems that arise with scaling applications. I have the creative freedom to make my 
+    //   own design choices as I work on new elements and the trust and respect from my superiors to offer suggestions and 
+    //   ideas about important aspects of our software.
+    // </div>,
+    link: "ringy.com"
+  },
+  {
+    company: "Ringy",
+    position: "Senior Front End Software Engineer",
     location: "Denver, Colorado",
-    dates: "April, 2020 - Today",
+    dates: "April, 2020 - November, 2022",
     logo: isales,
     images: [],
-    description: <div>
-      I am currently a Front End Software Engineer at iSalesCRM on a small but effective engineering team. The company 
-      is at a critical point of growth as it takes its success and revenue and pours it back into the engineering 
-      department and the progress of the company on the whole. Joining the company at this stage has given me a unique 
-      perspective on transitioning from a small to a medium sized company, and more importantly, on how that change 
-      affects the software. My position gives me the opportunity to influence the direction of our system’s architecture 
-      and design, while also learning from the decisions of the more experienced developers around me.
-      <br/><br/>
-      I get to work on large features solo or collaboratively with senior developers at the company and I am constantly 
-      learning how to tackle new problems that arise with scaling applications. I have the creative freedom to make my 
-      own design choices as I work on new elements and the trust and respect from my superiors to offer suggestions and 
-      ideas about important aspects of our software.
-    </div>,
-    link: "isalescrm.io"
+    technologies: ["Node.js", "Typescript", "ReactJS", "Redux-Saga", "SQL"],
+    description: 
+    <ul>
+      <li> Maintained and developed for a Node/ReactJS customer relationship management system (Ringy) that improved results for thousands of sales agents through automated marketing tactics
+      </li>
+      <li>Lead migration effort to move state and side-effect logic throughout codebase from Redux-Saga to React-Query </li>
+      <li>Identified and creatively redesigned sticking points in user experience by understanding analytics on use patterns as well as first-hand accounts from clients and support staff</li>
+      <li>Collaborated with senior engineers on major application design decisions, both visual and architectural, to determine code standards, plan features and refactoring efforts, and map out new microservice interactions</li>
+      <li>Designed workflow and visual presentation for new and exciting products and features; independently produced client side of a modern video conferencing application (Scopey) for integration with primary product</li>
+      <li>Promoted to senior after only eighteen months, in recognition of senior level performance and responsibilities  </li>
+    </ul>,
+    
+    // <div>
+    //   I am currently a Front End Software Engineer at iSalesCRM on a small but effective engineering team. The company 
+    //   is at a critical point of growth as it takes its success and revenue and pours it back into the engineering 
+    //   department and the progress of the company on the whole. Joining the company at this stage has given me a unique 
+    //   perspective on transitioning from a small to a medium sized company, and more importantly, on how that change 
+    //   affects the software. My position gives me the opportunity to influence the direction of our system’s architecture 
+    //   and design, while also learning from the decisions of the more experienced developers around me.
+    //   <br/><br/>
+    //   I get to work on large features solo or collaboratively with senior developers at the company and I am constantly 
+    //   learning how to tackle new problems that arise with scaling applications. I have the creative freedom to make my 
+    //   own design choices as I work on new elements and the trust and respect from my superiors to offer suggestions and 
+    //   ideas about important aspects of our software.
+    // </div>,
+    link: "ringy.com"
   },
   {
     company: "Hewlett Packard Enterprise",
@@ -49,18 +96,25 @@ export const professional = [
     location: "Fort Collins, Colorado",
     dates: "Summer, Fall 2019",
     logo: hpe,
-    images: [{title: "Lumberjack, a log processor", images: [{src: lumberjack, caption:"Lumberjack"}]}],
-    description: <div>
-      At the beginning of my HPE internship, I was given a problem: too much developer time was being spent combing through 
-      log files from multiple systems, each with 100k+ lines. I was given creative control to solve this problem and over a 
-      six month period, I developed Lumberjack (so titled because it broke down logs).
-      <br/><br/>
-      Lumberjack was a log processing service I wrote for Hewlett Packard Enterprise. It was one of my first experiences 
-      designing an application end to end and it consisted of three main parts: a robust C# parsing system that processed new 
-      logs every night, a PostgresQL database to store the parsed information and a Node GraphQL server to access it, and the 
-      ReactJS interface built to display linked events in a flow that accurately emulated data flow across multiple machines 
-      working off of different time servers.
-    </div>,
+    // images: [{title: "Lumberjack, a log processor", images: [{src: lumberjack, caption:"Lumberjack"}]}],
+    technologies: ['C#', 'Node.js', 'ReactJS', 'GraphQL', 'PostgresQL'],
+    description: 
+    <ul>
+      <li>Saved hours of developer time during triage by creating a tool for the visualization and navigation of log files</li>
+      <li>Parsed log information from 100,000+ line log files, stored and accessed data using PostgreSQL and GraphQL</li>
+      <li>Intuitively displayed data in a locally hosted ReactJS web application; log entries follow the chronological flow of system activity and allow users to filter for more relevant events</li>
+    </ul>,
+    // <div>
+    //   At the beginning of my HPE internship, I was given a problem: too much developer time was being spent combing through 
+    //   log files from multiple systems, each with 100k+ lines. I was given creative control to solve this problem and over a 
+    //   six month period, I developed Lumberjack (so titled because it broke down logs).
+    //   <br/><br/>
+    //   Lumberjack was a log processing service I wrote for Hewlett Packard Enterprise. It was one of my first experiences 
+    //   designing an application end to end and it consisted of three main parts: a robust C# parsing system that processed new 
+    //   logs every night, a PostgresQL database to store the parsed information and a Node GraphQL server to access it, and the 
+    //   ReactJS interface built to display linked events in a flow that accurately emulated data flow across multiple machines 
+    //   working off of different time servers.
+    // </div>,
     link: "hpe.com"
   },
   {
@@ -70,40 +124,48 @@ export const professional = [
     dates: "Summer - Fall 2018",
     logo: pelco,
     images: [],
-    description: <div>
-      At Pelco, I spent the first few weeks of my internship doing manual testing for security camera firmware. This helped me learn my way around the camera models, the bug submission process, and the company pipeline in general before I got to join a remote QA automation team with whom I wrote API tests using Python and the Robot Framework for a proprietary video management system that tracks feeds from and interfaces with Pelco's cameras and certain third party devices.
-      <br/><br/>
-      Being my first experience in a software-focussed workplace, a lot of what I took away from the job are foundational skills that I now consider second nature. It was my first time using Git. My first daily stand-ups. My first kanban boards. I learned what a REST API was and how to use Postman. I started out clicking my way through network interfaces for security cameras and looking for bugs and by the end, I was taking tasks off the same pile as the rest of my team of full-time QA engineers.
-    </div>,
+    technologies: ['Python', 'Robot Framework'],
+    description: 
+    <ul>
+      <li>Automated API testing for a security video management system using Python and Robot Framework among a team of full time engineers working in an agile environment</li>
+      <li>Performed manual API and UX testing for interfacing with camera firmware</li>
+    </ul>
+   
+    ,
+    // <div>
+    //   At Pelco, I spent the first few weeks of my internship doing manual testing for security camera firmware. This helped me learn my way around the camera models, the bug submission process, and the company pipeline in general before I got to join a remote QA automation team with whom I wrote API tests using Python and the Robot Framework for a proprietary video management system that tracks feeds from and interfaces with Pelco's cameras and certain third party devices.
+    //   <br/><br/>
+    //   Being my first experience in a software-focussed workplace, a lot of what I took away from the job are foundational skills that I now consider second nature. It was my first time using Git. My first daily stand-ups. My first kanban boards. I learned what a REST API was and how to use Postman. I started out clicking my way through network interfaces for security cameras and looking for bugs and by the end, I was taking tasks off the same pile as the rest of my team of full-time QA engineers.
+    // </div>,
     link: "pelco.com"
   }
 ]
 
 export const volunteer = [
-  {
-    company: "My Brother's Keeper 617",
-    position: "Project manager, developer",
-    location: "Boston, Massachusetts",
-    dates: "August, 2020 - Today",
-    logo: mbk,
-    images: [
-      {title: "Community posts", images: [{src: mbk1, alt:"MBK App Prototype"}]}, 
-      {title: "Calendar events", images: [{src: mbk2, alt:"MBK App Prototype"}]}, 
-      {title: "Profile", images: [{src: mbk3, alt:"MBK App Prototype"}]}
-    ],
-    description: <div>
-      I am among a team of seven engineers working on an internal social network for the Boston nonprofit My Brother’s 
-      Keeper 617. MBK617 does some amazing work for black youth in the Boston area and we’re doing what we can to make 
-      some of that work a little easier for them. I’m beyond excited about this project, which we were connected to through 
-      the super cool efforts of <a rel="noreferrer" target="_blank" href="https://buildforblacklives.com">Build For Black Lives</a>.
-      <br/><br/>
-      While this project is still deeply in its beginning phases, my contribution so far has largely been on the architectural 
-      and administrative sides of things, writing repository skeletons, making stack decisions, and doing database setup. I have
-      also done some prototyping for the app's layout and design. In the works is a React Native mobile app and a Node server using 
-      a Mongodb non-relational database. 
-    </div>,
-    link: "mbk617.com"
-  },
+  // {
+  //   company: "My Brother's Keeper 617",
+  //   position: "Project manager, developer",
+  //   location: "Boston, Massachusetts",
+  //   dates: "August, 2020 - Today",
+  //   logo: mbk,
+  //   images: [
+  //     {title: "Community posts", images: [{src: mbk1, alt:"MBK App Prototype"}]}, 
+  //     {title: "Calendar events", images: [{src: mbk2, alt:"MBK App Prototype"}]}, 
+  //     {title: "Profile", images: [{src: mbk3, alt:"MBK App Prototype"}]}
+  //   ],
+  //   description: <div>
+  //     I am among a team of seven engineers working on an internal social network for the Boston nonprofit My Brother’s 
+  //     Keeper 617. MBK617 does some amazing work for black youth in the Boston area and we’re doing what we can to make 
+  //     some of that work a little easier for them. I’m beyond excited about this project, which we were connected to through 
+  //     the super cool efforts of <a rel="noreferrer" target="_blank" href="https://buildforblacklives.com">Build For Black Lives</a>.
+  //     <br/><br/>
+  //     While this project is still deeply in its beginning phases, my contribution so far has largely been on the architectural 
+  //     and administrative sides of things, writing repository skeletons, making stack decisions, and doing database setup. I have
+  //     also done some prototyping for the app's layout and design. In the works is a React Native mobile app and a Node server using 
+  //     a Mongodb non-relational database. 
+  //   </div>,
+  //   link: "mbk617.com"
+  // },
   {
     company: "Extra Life",
     position: "Project leader, event coordinator",
@@ -127,7 +189,7 @@ export const volunteer = [
     position: "Treasurer, Webmaster, Ex-officio",
     location: "Fort Collins, Colorado",
     dates: "August 2016 - December 2019",
-    // logo: acmw,
+    logo: acmw,
     images: [
       { title: "Hiking with ACM-W", images: [{src: acmw1, caption:"Hiking with ACM-W"}] }, 
       { title: "ACM-W Community Board Game Night", images: [{src: acmw2, caption:"ACM-W Community Board Games"}] }, 
@@ -164,5 +226,16 @@ export const volunteer = [
       <br/><br/>
       We hosted specialized trainings for the lab equipment, taught by RDC staff during club meetings. Students learned to use 3D modeling software, vector illustration software, and safety and methods for using lab equipment such as laser cutters, 3D printers, embroidery machines, and many other CNC devices as well as woodworking and metalworking tools and machines. 
     </div>,
+  }
+]
+
+export const education = [
+  {
+    company: "Colorado State University",
+    logo: csu,
+    location: "Fort Collins, Colorado",
+    dates: "August 2016 - December 2019",
+    position: "Bachelor of Science in Computer Science",
+    link: "compsci.colostate.edu"
   }
 ]

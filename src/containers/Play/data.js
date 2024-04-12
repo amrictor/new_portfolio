@@ -19,9 +19,14 @@ import anim1024 from '../../resources/images/anim1024.gif';
 import congo from '../../resources/images/congogameplay.gif';
 import poem1 from '../../resources/images/poem1.png';
 import poem2 from '../../resources/images/poem2.png';
-import waves from '../../resources/images/waves.gif';
-import swaying from '../../resources/images/swaying.gif';
-import hexes from '../../resources/images/hexes.gif';
+import waves from '../../resources/projects/waves.gif';
+import swaying from '../../resources/projects/swaying.gif';
+import hexes from '../../resources/projects/hexes.gif';
+import ldr1 from '../../resources/projects/ldr1.jpg';
+import ldr2 from '../../resources/projects/ldr2.jpg';
+import ldr3 from '../../resources/projects/ldr3.jpg';
+import rePiTile from '../../resources/projects/rePiTile.jpg'
+
 import trip_planner from '../../resources/images/trip_planner.gif';
 
 const data = [
@@ -30,6 +35,7 @@ const data = [
     title: "Versed", 
     link: "https://versed.amrictor.com",
     github: "https://github.com/amrictor/versed",
+    tags: ["web", "react", "technical", "javascript"],
     description: 
       <div>
         Versed is a remarkably niche pet project of mine that I’ve revisited many times over the years—the first time I wrote it used Java and a Swing interface. I was a freshman in college learning to code for the first time and knew nothing of...almost anything. This first draft was locally installed, completely offline, and required the user to upload proprietary lyrics files to cultivate their own libraries. Education is a marvelous thing.
@@ -49,6 +55,7 @@ const data = [
     title: "Subtractive Art in Virtual Reality", 
     github: "https://github.com/csu-hci-projects/Subtractive_Art-v1.0",
     report: hci_report,
+    tags: ["unity", "c#", "technical"],
     description: 
       <div>
         This was one of the most fun and unique projects I ever did for a class. With a team of two other students, I developed a new way to do art in virtual reality. As we contemplated existing applications, we realized that most virtual art mediums were additive rather than subtractive, e.g. you start with nothing and add to it, rather than starting with something and carving away the excess. The goal of this project was to study how people interface with virtual reality, and the comfort level of using it for making 3D art, so we conducted a study comparing our system to a physical form of subtractive art; all of our test subjects were asked to carve something out of soap, as well as in our application.
@@ -60,6 +67,7 @@ const data = [
     images: [{src: anim1024, alt:"raytracer"}], 
     title: "Ray Tracing Engine", 
     github: "https://github.com/amrictor/ray-tracer",
+    tags: ["c++", "technical"],
     description: 
       <div>
         I am not Linear Algebra's biggest fan, but this project was still very, very cool and I probably had just as much fun as frustration while working on it. I was able to develop a recursive ray tracing engine in C++ with the capability to render images and animations of transform-able objects (.obj format) and spheres in 3D space. While I can’t and won’t brag over any cool optimizations or fancy shadows or soft lighting, I will say I probably learned more from this project, from beginning to end, than I have from any other.
@@ -70,6 +78,7 @@ const data = [
     title: "Wordsmyth", 
     link: "https://wordsmyth.amrictor.com",
     github: 'https://github.com/amrictor/wordsmyth-2.0',
+    tags: ["web", "react", "technical", "javascript", "games"],
     description: 
       <div>
         Wordsmyth is another project of mine which has had many iterations, some of which were written long before I had the tools or skills to make the game work. The current version of the game is probably best described as “kinda like a Jackbox game?”, but it’s actually based on a 1998 board game called “Wise and Otherwise” that I got for my twelfth birthday and has since faded from the public eye.
@@ -84,6 +93,7 @@ const data = [
     title: "Linguistics and Text Prediction", 
     github: 'https://github.com/amrictor/MachineLearningFinal',
     report: 'https://nbviewer.jupyter.org/github/amrictor/MachineLearningFinal/blob/master/FinalProject/RictorProjectReport.ipynb',
+    tags: ["python", "artificial intelligence", "art"],
     description: 
       <div>
         I’ve worked on so many projects involving text generation that it’s easier to just talk about them in one place. I’ve spent time on similar writing-focussed projects using a number of methods ranging from Markov Chains to recurrent neural networks, for a number of purposes ranging from writing poetry, to generating Spongebob episodes, to impersonating a professor on Twitter.
@@ -95,6 +105,7 @@ const data = [
     images: [{src: congo, alt:"congo"}], 
     title: "Congo Online", 
     github: 'https://github.com/cs414-byte-mechanics/cs414-f19-001-ByteMechanics',
+    tags: ["web", "react", "technical", "javascript", "games"],
     description: 
       <div>
         Congo is an offshoot of chess that uses jungle animals as pieces. Many of the rules are similar, though the board layout differs slightly from what chess players may be used to, with a river and other special areas on the board that have their own rules for the pieces residing inside them. 
@@ -103,24 +114,35 @@ const data = [
       </div>
   }, 
   {
-    images: [{src: hexes, alt:"design"}, {src: swaying, alt:"design"}, {src: waves, alt:"design"}], 
+    images: [{src: waves, alt:"design"}, {src: hexes, alt:"design"}, {src: swaying, alt:"design"}], 
     title: "Programatic background design", 
+    tags: ["web", "react", "technical", "javascript", "art"],
     description: 
       <div>
         As fun and useful as interactive content is, I really love experimenting with Javascript, HTML, and CSS as a purely visual medium and limiting myself to those tools to see what I can create without outside assets. Though I could often end up at roughly the same result with less pain or in a more efficient way, I take pleasure in the challenge and in the results I can produce.
       </div>
   },
   {
-    images: [{src: trip_planner, alt:"trip planner"}], 
-    title: "Trip Planner", 
-    github: 'https://github.com/amrictor/trip-planner',
+    images: [{src: rePiTile, alt:"rePiTile"}, {src: ldr3, alt:"light resistor trip wire"}, {src: ldr1, alt:"light resistor trip wire"}], 
+    title: "Physical prototyping and evironmental sensors", 
+    tags: ["IoT", "python", "raspberry pi"],
     description: 
       <div>
-        While a little dated at this point, I still cherish this project as my first full stack project and my first exposure to web development. I worked with a team of other students to develop a trip planning service that allows users to design, visualize, and save trips between locations worldwide and available to search and choose from.
-        <br/><br/>
-        This project used a RESTful Java server, MySQL database, and a ReactJS client and was developed using the Agile method for a Software Engineering course at Colorado State University.
+        I love to see the things I create interface with the world outside the screen - it makes them feel real. Developing and interfacing with environmental sensors to learn about a real physical space is something I have a lot of fun with, and have found occasionally extraordinarily useful for things like plant and animal care.
       </div>
-  }
+  },
+  // {
+  //   images: [{src: trip_planner, alt:"trip planner"}], 
+  //   title: "Trip Planner", 
+  //   tags: ["web", "react", "technical", "javascript"],
+  //   github: 'https://github.com/amrictor/trip-planner',
+  //   description: 
+  //     <div>
+  //       While a little dated at this point, I still cherish this project as my first full stack project and my first exposure to web development. I worked with a team of other students to develop a trip planning service that allows users to design, visualize, and save trips between locations worldwide and available to search and choose from.
+  //       <br/><br/>
+  //       This project used a RESTful Java server, MySQL database, and a ReactJS client and was developed using the Agile method for a Software Engineering course at Colorado State University.
+  //     </div>
+  // }
 ]
 
 export default data;

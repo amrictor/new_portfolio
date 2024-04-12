@@ -8,7 +8,7 @@ import Play from '../Play';
 import { Button } from '@material-ui/core';
 import { AiOutlineToTop } from 'react-icons/ai'
 
-const styles ={
+const styles = theme => ({
   title: {
     fontSize: 40,
     margin: '0px 30px',
@@ -20,6 +20,9 @@ const styles ={
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     maxWidth: 400,
+    '@media (max-width: 340px)': {
+      fontSize: '11vw'
+    }
   },
   navigation: {
     display: 'flex',
@@ -32,6 +35,9 @@ const styles ={
     position: 'sticky',
     top: 0,
     zIndex: 2,
+    // [theme.breakpoints.down('xs')]: {
+    //   paddingTop: 80
+    // }
   },
   links: {
     padding: 10,
@@ -74,7 +80,7 @@ const styles ={
       cursor: 'pointer'
     }
   }
-}
+})
 
 function getScrollPosition({ element, useWindow }) {
   const isBrowser = typeof window !== `undefined`
@@ -125,6 +131,7 @@ class App extends React.Component {
     if (y < -0.6*window.innerHeight) {
       links.style.background = 'rgba(28, 134, 209, .7)';
       nav.style.color = 'white';
+      nav.style.paddingTop = '10px';
       title.style.maxWidth = '0px';
       title.style.maxHeight = '0px'
       title.style.margin = '0px';
@@ -133,9 +140,10 @@ class App extends React.Component {
     else {
       links.style.background = 'transparent';
       nav.style.color = 'black';
-      title.style.maxHeight = '60px'
-      title.style.maxWidth = '350px'
-      title.style.margin = '30px';
+      nav.style.paddingTop = '40px';
+      title.style.maxHeight = '60px';
+      title.style.maxWidth = '350px';
+      title.style.margin = '0 30px';
       scrollUp.style.display='none';
     }
   }
